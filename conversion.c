@@ -26,7 +26,7 @@ int main(void) {
    binnum[i] = '\0';
        
 
-/* Complete the expression */
+/* Checking the number of binary digits */
     numdigits = log2(inum);
     numdigits = ceil(numdigits)+1;
       printf("The number of digits is %d\n",numdigits);

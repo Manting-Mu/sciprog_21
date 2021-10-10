@@ -3,7 +3,7 @@
 
 int main(void) {
 
-/*  Declare variables */
+/* Declare variables */
    int i,inum,tmp,numdigits;
    float fnum;
    char binnum[60];

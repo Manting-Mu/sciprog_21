@@ -2,49 +2,56 @@
 #include <stdlib.h>
 #include <math.h>
 
-void GCD(int *a, int *b);
+void interativeGCD(int *a, int *b);
+void recursiveGCD(int *a, int *b);
 
 int main() {
 
-	int n1, n2;
+	int n1, n2, error;
 
 	// enter information from user
 
 	printf("Enter 2 postive intergers (enter larger one first) for computing their GCD: \n");
 	scanf("%d, %d", &n1, &n2);
-
-	//if the number eneter is less than 1 then it is not a valid input the program stops
-
-	/*if (n1 || n2 < 1) {
-		printf("Number less than 1\n");
-		exit(1);
-	}
-
-	else if (n1 || n2 == 1) {
-		printf("GCD = 1 \n");
-		exit(1);
-	}
 	
-	printf("The Fibonacci sequence is: \n");
-	printf("%d, ", n1);
-*/
-	//loop to calculate and print all the fibonacci sequence values
+	if (error != 2) {
+		printf("please try again\n");
+		return 1;
+	}
+
+	if (n1<=0 || n2<=0) {
+		printf("These number are not positive!\n");
+		return 1;
+	}
+
+	return 0;
+}
 
 	int i;
 	for (i = 1; n2 != 0; i++) {
-		GCD(&n1, &n2);
+		iterativeGCD(&n1, &n2);
 	}
-	printf("GCD=%d\n", n1);
+	printf("Iterative GCD=%d\n", n1);
+	printf("Recursice GCD=%d\n", recursiveGCD(&n1, &n2);
 	return 0;
 }
 
 //defined as a void function with no return type
 
-void GCD(int *a, int *b) {
+void iterativeGCD(int *a, int *b) {
 
 	int remainder;
 	remainder = *a % *b;
 	*a = *b;
 	*b = remainder;		
 } 
+
+void recursiveGCD(int *a, int *b) {
+	if (*b=0) {
+		return *a;
+	}
+	else{
+		return(resursiveGCD(b, a%b))
+	}
+}
 

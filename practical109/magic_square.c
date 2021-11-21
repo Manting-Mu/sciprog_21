@@ -3,7 +3,7 @@
 #include"magic_square.h"
 
 int main(){
-
+	//user input of matric of size n *n
 	int n;
 	printf("Enter the square side:\n");
 	scanf("%d", &n);
@@ -16,7 +16,7 @@ int main(){
 	for (i = 0; i<n; i++){
 		magicSquare[i] = malloc(n * sizeof(int));
 	}
-
+	//inputing matrix elements
 	int j;
 
 	for (i = 0; i<n; i++){
@@ -25,9 +25,9 @@ int main(){
 			scanf("%d", &magicSquare[i][j]);
 		}
 	}
-	
+	//calling isMagicSquare function, check if square is magic.
 	printf("The square %s magic.\n", isMagicSquare(magicSquare, n)? "is" : "is NOT");
-
+	//free memory taken by magic square matrix. 
 	for(i = 0; i < n; i++) {
 		free(magicSquare[i]);
 	}
